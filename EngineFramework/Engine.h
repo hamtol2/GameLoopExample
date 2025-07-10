@@ -21,6 +21,14 @@ public:
 	// 실행 함수.
 	void Run();
 
+	// 종료 함수.
+	void Quit();
+
+	// 키 입력 확인 함수.
+	bool GetKey(int keyCode);
+	bool GetKeyDown(int keyCode);
+	bool GetKeyUp(int keyCode);
+
 	// 싱글톤 인스턴스를 반환하는 함수.
 	static Engine& Get();
 
@@ -37,4 +45,7 @@ private:
 
 	// 키 입력 상태를 저장하는 배열.
 	KeyState keyStates[255];
+
+	// 엔진 종료 플래그.
+	bool isQuit = false;
 };
